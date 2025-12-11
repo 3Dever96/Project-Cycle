@@ -1,0 +1,17 @@
+{
+    "name": "ProjectCycle.PlayerControl",
+    "rootNamespace": "ProjectCycle.PlayerControl",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:f388f9328b44a6f4bb087d66147da301"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

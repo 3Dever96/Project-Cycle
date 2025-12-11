@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.InputSysten;
+using UnityEngine.InputSystem;
 
 namespace ProjectCycle.GameSystems
 {
 	[RequireComponent(typeof(PlayerInput))]
-	public class GameManager : Monobehavior
+	public class GameManager : MonoBehaviour
 	{
 		public PlayerInput Input { get; private set; }
 		public static GameManager instance;

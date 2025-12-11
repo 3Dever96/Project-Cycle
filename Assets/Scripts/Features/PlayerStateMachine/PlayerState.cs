@@ -4,14 +4,17 @@ using ProjectCycle.GameSystems;
 
 namespace ProjectCycle.PlayerControl
 {
-	public class PlayerState : MonoBehavior
+	[RequireComponent(typeof(PlayerStateMachine))]
+	public abstract class PlayerState : MonoBehaviour
 	{
 		public void OnEnable()
-		{	GameManager.instance.Input.OnActionCallback += OnAction;
+		{	
+			GameManager.instance.Input.onActionTriggered += OnAction;
 		}
 		
 		public void OnDisable()
-		{	GameManager.instance.Input.OnActionCallback -= OnAction;
+		{	
+			GameManager.instance.Input.onActionTriggered -= OnAction;
 		}
 		
 		protected abstract void OnAction(InputAction.CallbackContext context);
