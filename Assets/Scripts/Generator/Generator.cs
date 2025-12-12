@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.AI.Navigation;
 
 namespace ProjectCycle.Generator
 {
@@ -10,8 +11,13 @@ namespace ProjectCycle.Generator
         private CellData[,] cellGrid;
         private CellData startCell;
 
+        private List<CellObject> cellObjects = new List<CellObject>();
+
+        private NavMeshSurface surface;
+
         private void Start()
         {
+            surface = GetComponent<NavMeshSurface>();
             GenerateDungeon(maxSize);
         }
 
@@ -35,6 +41,10 @@ namespace ProjectCycle.Generator
             SetFinalCell(size);
 
             InstantiateCells(size);
+
+            surface.BuildNavMesh();
+
+            InitCells();
         }
 
         private void GeneratePaths(int size)
@@ -184,9 +194,19 @@ namespace ProjectCycle.Generator
                 {
                     CellData cell = cellGrid[x, y];
                     CellObject newCell = Instantiate(cellPrefab, new Vector3(x * 30f, 0f, y * 30f), Quaternion.identity).GetComponent<CellObject>();
+                    newCell.cell = cell;
                     newCell.transform.parent = transform;
-                    newCell.Initialize(cell);
+                    newCell.CreateCell();
+                    cellObjects.Add(newCell);
                 }
+            }
+        }
+
+        private void InitCells()
+        {
+            for (int i = 0; i < cellObjects.Count; i++)
+            {
+                cellObjects[i].Initialize();
             }
         }
     }
