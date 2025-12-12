@@ -1,0 +1,16 @@
+{
+    "name": "ProjectCycle.EnemyControl",
+    "rootNamespace": "ProjectCycle.EnemyControl",
+    "references": [
+        "GUID:54dc2e0af0d6755498ba9e8ae8877d06"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
