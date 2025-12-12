@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 4732208038443069233}
   - component: {fileID: 8716813517045976597}
   - component: {fileID: 6511799259363398645}
+  - component: {fileID: 9204143745354142004}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -163,7 +164,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 240
+  m_AngularSpeed: 500
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -184,8 +185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015646b9c4e9d2a4abace16adc7e4ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: ProjectCycle::ProjectCycle.EnemyStateMachine
-  walkSpeed: 2.5
-  runSpeed: 5
+  walkSpeed: 2
+  runSpeed: 4
+  chaseDistance: 10
 --- !u!114 &6511799259363398645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +202,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: ProjectCycle.EnemyControl::ProjectCycle.EnemyControl.EnemyPatrolState
   roamDistance: 10
   waitTime: 5
+--- !u!114 &9204143745354142004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3876857099368427272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ca60340e277314aa18c0ff349c64fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: ProjectCycle.EnemyControl::ProjectCycle.EnemyControl.EnemyChaseState
 --- !u!1 &6782765527593193580
 GameObject:
   m_ObjectHideFlags: 0
