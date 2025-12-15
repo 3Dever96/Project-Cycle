@@ -1,10 +1,8 @@
 {
-    "name": "ProjectCycle.Generator",
-    "rootNamespace": "ProjectCycle.Generator",
+    "name": "ProjectCycle.EnemyControl",
+    "rootNamespace": "ProjectCycle.EnemyControl",
     "references": [
-        "GUID:f388f9328b44a6f4bb087d66147da301",
-        "GUID:4307f53044263cf4b835bd812fc161a4",
-        "GUID:8c4dd21966739024fbd72155091d199e"
+        "GUID:54dc2e0af0d6755498ba9e8ae8877d06"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
