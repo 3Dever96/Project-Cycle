@@ -7,6 +7,8 @@ namespace ProjectCycle.GameSystems
 	public class GameManager : MonoBehaviour
 	{
 		public PlayerInput Input { get; private set; }
+		public PlayerManager PlayerManager { get; private set; }
+
 		public static GameManager instance;
 		public GameState gameState;
 				
@@ -27,6 +29,7 @@ namespace ProjectCycle.GameSystems
 			DontDestroyOnLoad(gameObject);
 			
 			Input = GetComponent<PlayerInput>();
+			PlayerManager = GetComponent<PlayerManager>();
 		}
 	}
 }

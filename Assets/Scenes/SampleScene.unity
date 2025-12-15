@@ -818,6 +818,7 @@ GameObject:
   - component: {fileID: 2018503371}
   - component: {fileID: 2018503370}
   - component: {fileID: 2018503369}
+  - component: {fileID: 2018503372}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -883,6 +884,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2018503372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018503368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b90c7cdcebb5d4b9db95f355a75a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: ProjectCycle.GameSystems::ProjectCycle.GameSystems.PlayerManager
+  skinColor: {r: 1, g: 0.75992066, b: 0.4292453, a: 1}
+  armor:
+    underNeckLength: 0
+    underSleeveLength: 2
+    underTorsoLength: 3
+    underLegLength: 0
+    underShirtColor: {r: 1, g: 0, b: 0.72531414, a: 1}
+    underPantsColor: {r: 0.6853142, g: 1, b: 0, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
