@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e02d0592f19149540ae46453c28aee71, type: 3}
+  m_Name: 4. Scholar
+  m_EditorClassIdentifier: ProjectCycle.Database::ProjectCycle.Database.Class
+  className: Scholar
+  baseDef: 13
+  baseWis: 14
+  baseMDef: 15
+  baseMp: 16
+  baseMAtk: 15
+  baseCha: 14
+  baseAgi: 13
+  baseSp: 12
+  baseCrit: 11
+  baseInt: 10
+  baseAtk: 11
+  baseHp: 12
