@@ -21,7 +21,7 @@ namespace ProjectCycle.GameSystems
             underShirtColor = colors[Random.Range(0, colors.Count)];
             underPantsColor = colors[Random.Range(0, colors.Count)];
 
-            underNeckLength = (Length)Random.Range(0, 4);
+            underNeckLength = (Length)Random.Range(0, 3);
             underSleeveLength = (Length)Random.Range(0, 4);
             underTorsoLength = (Length)Random.Range(0, 4);
             underLegLength = (Length)Random.Range(0, 4);
@@ -45,8 +45,8 @@ namespace ProjectCycle.GameSystems
         private Color GeneratePrimaryColor()
         {
             float hue = Random.Range(0f, 1f);
-            float saturation = 1f;
-            float value = 1f;
+            float saturation = Random.Range(0f, 1f);
+            float value = Random.Range(0f, 1f);
 
             Color randomColor = Color.HSVToRGB(hue, saturation, value);
             return randomColor;
@@ -61,6 +61,5 @@ namespace ProjectCycle.GameSystems
             Color complementaryColor = Color.HSVToRGB(complementaryHue, saturation, value);
             return complementaryColor;
         }
-
     }
 }
