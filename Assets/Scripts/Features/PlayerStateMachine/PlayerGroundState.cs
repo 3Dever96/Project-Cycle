@@ -52,6 +52,8 @@ namespace ProjectCycle.PlayerControl
             player.Direction = transform.forward;
             player.VerticalSpeed = stickForce;
             jump = false; // Reset the jump flag.
+
+            player.Animator.Play("GroundState");
         }
 
         // Called every frame to update the ground state logic.
@@ -108,6 +110,8 @@ namespace ProjectCycle.PlayerControl
                     player.CurrentSpeed = 0f;
                 }
             }
+
+            player.Animator.SetFloat("CurrentSpeed",player.CurrentSpeed);
 
             // Calculate the player's movement speed based on the input magnitude.
             moveSpeed = maxSpeed * move.magnitude;

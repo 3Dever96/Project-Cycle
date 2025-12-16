@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e02d0592f19149540ae46453c28aee71, type: 3}
+  m_Name: 5. Mage
+  m_EditorClassIdentifier: ProjectCycle.Database::ProjectCycle.Database.Class
+  className: Mage
+  baseDef: 12
+  baseWis: 13
+  baseMDef: 14
+  baseMp: 15
+  baseMAtk: 16
+  baseCha: 15
+  baseAgi: 14
+  baseSp: 13
+  baseCrit: 12
+  baseInt: 11
+  baseAtk: 10
+  baseHp: 11

@@ -10,6 +10,7 @@ namespace ProjectCycle.PlayerControl
     {
         // Reference to the CharacterController component attached to the player GameObject.
         public CharacterController Controller { get; private set; }
+        public Animator Animator { get; private set; }
 
         // The current state of the player.
         public PlayerState CurrentState { get; private set; }
@@ -36,6 +37,7 @@ namespace ProjectCycle.PlayerControl
         {
             // Initialize the CharacterController component.
             Controller = GetComponent<CharacterController>();
+            Animator = GetComponentInChildren<Animator>();
 
             // Retrieve references to the ground and air state components.
             GroundState = GetComponent<PlayerGroundState>();

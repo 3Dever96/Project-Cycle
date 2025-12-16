@@ -31,6 +31,7 @@ namespace ProjectCycle.PlayerControl
         {
             // Initialize the vertical speed with the player's current vertical speed.
             verticalSpeed = player.VerticalSpeed;
+            player.Animator.Play("AirState");
         }
 
         // Called every frame to update the air state logic.
