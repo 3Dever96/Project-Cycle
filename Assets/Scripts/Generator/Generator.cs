@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.AI.Navigation;
+using ProjectCycle.GameSystems;
 
 namespace ProjectCycle.Generator
 {
@@ -32,6 +33,13 @@ namespace ProjectCycle.Generator
         {
             // Get the NavMeshSurface component attached to the GameObject.
             surface = GetComponent<NavMeshSurface>();
+
+            minRoom = 5 + GameManager.instance.DungeonManager.completedDungeons;
+
+            while (minRoom > maxSize * maxSize)
+            {
+                maxSize++;
+            }
 
             // Generate the dungeon layout with the specified maximum size.
             GenerateDungeon(maxSize);

@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 8787740157863496746}
   - component: {fileID: 8827849159070959542}
   - component: {fileID: 2904239162595022912}
+  - component: {fileID: 9221283545385105560}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -291,3 +292,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7596c5e9bebfaae4c84a641f213f0d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: ProjectCycle.GameSystems::ProjectCycle.GameSystems.SceneHandler
+--- !u!114 &9221283545385105560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7315098528626118462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fd0008476d8114da22983d589325aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: ProjectCycle.GameSystems::ProjectCycle.GameSystems.DungeonManager
+  dungeonType: 0
+  completedDungeons: 0

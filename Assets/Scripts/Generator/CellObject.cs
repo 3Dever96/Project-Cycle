@@ -1,6 +1,7 @@
 using UnityEngine;
 using Unity.Cinemachine;
-using TMPro;
+using ProjectCycle.GameSystems;
+using ProjectCycle.Interactable;
 
 namespace ProjectCycle.Generator
 {
@@ -28,6 +29,8 @@ namespace ProjectCycle.Generator
         // GameObject representing the end flag, which is activated for the final cell.
         public GameObject endFlag;
 
+        private DistanceSign distanceSign;
+
         // Method to create and initialize the cell.
         public void CreateCell()
         {
@@ -39,6 +42,8 @@ namespace ProjectCycle.Generator
 
             // Deactivate the end flag initially.
             endFlag.SetActive(false);
+
+            distanceSign = GetComponentInChildren<DistanceSign>();
         }
 
         // Method to initialize the cell based on its type and properties.
@@ -49,6 +54,8 @@ namespace ProjectCycle.Generator
             {
                 doorObjects[i].gameObject.SetActive(!cell.Doors[i]);
             }
+
+            distanceSign.distance = cell.DistanceFromStart;
 
             // Handle initialization based on the cell type.
             if (cell.CellType == CellType.Start) // Starting cell
@@ -70,6 +77,25 @@ namespace ProjectCycle.Generator
             {
                 // Activate the end flag to indicate the final cell.
                 endFlag.SetActive(true);
+
+                switch (GameManager.instance.DungeonManager.dungeonType)
+                {
+                    case DungeonType.None:
+                        Debug.Log("No reward");
+                        break;
+                    case DungeonType.Treasure:
+                        Debug.Log("Big Chest");
+                        break;
+                    case DungeonType.MiniBoss:
+                        Debug.Log("Mini boss waiting");
+                        break;
+                    case DungeonType.BossKey:
+                        Debug.Log("Boss key located");
+                        break;
+                    case DungeonType.Palace:
+                        Debug.Log("Biome boss waiting");
+                        break;
+                }
             }
         }
     }
