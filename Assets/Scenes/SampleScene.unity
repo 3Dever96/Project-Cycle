@@ -446,7 +446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199da0c994d37244bb86e8769eefb37d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: ProjectCycle.Generator::ProjectCycle.Generator.Generator
-  maxSize: 8
+  maxSize: 4
+  minRoom: 10
   cellPrefab: {fileID: 5319077154454274744, guid: 374658a59dc8490489488c85f2fcc277, type: 3}
 --- !u!4 &572997796
 Transform:
@@ -951,6 +952,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3422101639003216144, guid: 9c94f2bd5843efa4f96d8e72a93d46fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226439953026080345, guid: 9c94f2bd5843efa4f96d8e72a93d46fe, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7315098528626118462, guid: 9c94f2bd5843efa4f96d8e72a93d46fe, type: 3}

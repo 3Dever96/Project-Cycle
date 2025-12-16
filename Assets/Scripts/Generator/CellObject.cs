@@ -1,5 +1,6 @@
 using UnityEngine;
 using Unity.Cinemachine;
+using TMPro;
 
 namespace ProjectCycle.Generator
 {
@@ -50,7 +51,7 @@ namespace ProjectCycle.Generator
             }
 
             // Handle initialization based on the cell type.
-            if (cell.CellType == 0) // Starting cell
+            if (cell.CellType == CellType.Start) // Starting cell
             {
                 // Instantiate the player at the cell's position and set its parent to the entity parent.
                 Transform newPlayer = Instantiate(player, transform.position, Quaternion.identity).transform;
@@ -59,13 +60,13 @@ namespace ProjectCycle.Generator
                 // Add the player to the CinemachineTargetGroup for camera tracking.
                 targetGroup.AddMember(newPlayer, 1f, 5f);
             }
-            else if (cell.CellType == 1) // Normal cell
+            else if (cell.CellType == CellType.Basic || cell.CellType == CellType.Gauntlet) // Normal cell
             {
                 // Instantiate an enemy at the cell's position and set its parent to the entity parent.
                 Transform newEnemey = Instantiate(enemy, transform.position, Quaternion.identity).transform;
                 newEnemey.parent = entityParent;
             }
-            else if (cell.CellType == 2) // Final cell
+            else if (cell.CellType == CellType.Final) // Final cell
             {
                 // Activate the end flag to indicate the final cell.
                 endFlag.SetActive(true);
