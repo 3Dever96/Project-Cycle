@@ -102,5 +102,10 @@ namespace ProjectCycle.UI
             }
             UpdatePlayerManager();
         }
+
+        public void OnContinue()
+        {
+            GameManager.instance.SceneHandler.MoveToScene(2);
+        }
     }
 }

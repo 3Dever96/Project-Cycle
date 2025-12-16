@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199da0c994d37244bb86e8769eefb37d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: ProjectCycle.Generator::ProjectCycle.Generator.Generator
-  maxSize: 3
+  maxSize: 8
   cellPrefab: {fileID: 5319077154454274744, guid: 374658a59dc8490489488c85f2fcc277, type: 3}
 --- !u!4 &572997796
 Transform:
@@ -560,13 +560,13 @@ MonoBehaviour:
   Radius: 5
   Orbits:
     Top:
-      Radius: 2
+      Radius: 1
       Height: 5
     Center:
       Radius: 7
       Height: 2.25
     Bottom:
-      Radius: 2.5
+      Radius: 1
       Height: 0.1
     SplineCurvature: 0.5
   RecenteringTarget: 2

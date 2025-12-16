@@ -8,6 +8,7 @@ namespace ProjectCycle.GameSystems
 	{
 		public PlayerInput Input { get; private set; }
 		public PlayerManager PlayerManager { get; private set; }
+		public SceneHandler SceneHandler { get; private set; }
 
 		public static GameManager instance;
 		public GameState gameState;
@@ -30,6 +31,7 @@ namespace ProjectCycle.GameSystems
 			
 			Input = GetComponent<PlayerInput>();
 			PlayerManager = GetComponent<PlayerManager>();
+			SceneHandler = GetComponent<SceneHandler>();
 		}
 	}
 }
