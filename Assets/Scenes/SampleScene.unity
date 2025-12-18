@@ -446,7 +446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199da0c994d37244bb86e8769eefb37d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: ProjectCycle.Generator::ProjectCycle.Generator.Generator
-  maxSize: 8
+  maxSize: 3
+  minRoom: 5
   cellPrefab: {fileID: 5319077154454274744, guid: 374658a59dc8490489488c85f2fcc277, type: 3}
 --- !u!4 &572997796
 Transform:

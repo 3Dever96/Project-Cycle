@@ -1,5 +1,7 @@
 using UnityEngine;
 using Unity.Cinemachine;
+using ProjectCycle.GameSystems;
+using ProjectCycle.Interactable;
 
 namespace ProjectCycle.Generator
 {
@@ -27,6 +29,8 @@ namespace ProjectCycle.Generator
         // GameObject representing the end flag, which is activated for the final cell.
         public GameObject endFlag;
 
+        private DistanceSign distanceSign;
+
         // Method to create and initialize the cell.
         public void CreateCell()
         {
@@ -38,6 +42,8 @@ namespace ProjectCycle.Generator
 
             // Deactivate the end flag initially.
             endFlag.SetActive(false);
+
+            distanceSign = GetComponentInChildren<DistanceSign>();
         }
 
         // Method to initialize the cell based on its type and properties.
@@ -49,8 +55,10 @@ namespace ProjectCycle.Generator
                 doorObjects[i].gameObject.SetActive(!cell.Doors[i]);
             }
 
+            distanceSign.distance = cell.DistanceFromStart;
+
             // Handle initialization based on the cell type.
-            if (cell.CellType == 0) // Starting cell
+            if (cell.CellType == CellType.Start) // Starting cell
             {
                 // Instantiate the player at the cell's position and set its parent to the entity parent.
                 Transform newPlayer = Instantiate(player, transform.position, Quaternion.identity).transform;
@@ -59,16 +67,35 @@ namespace ProjectCycle.Generator
                 // Add the player to the CinemachineTargetGroup for camera tracking.
                 targetGroup.AddMember(newPlayer, 1f, 5f);
             }
-            else if (cell.CellType == 1) // Normal cell
+            else if (cell.CellType == CellType.Basic || cell.CellType == CellType.Gauntlet) // Normal cell
             {
                 // Instantiate an enemy at the cell's position and set its parent to the entity parent.
                 Transform newEnemey = Instantiate(enemy, transform.position, Quaternion.identity).transform;
                 newEnemey.parent = entityParent;
             }
-            else if (cell.CellType == 2) // Final cell
+            else if (cell.CellType == CellType.Final) // Final cell
             {
                 // Activate the end flag to indicate the final cell.
                 endFlag.SetActive(true);
+
+                switch (GameManager.instance.DungeonManager.dungeonType)
+                {
+                    case DungeonType.None:
+                        Debug.Log("No reward");
+                        break;
+                    case DungeonType.Treasure:
+                        Debug.Log("Big Chest");
+                        break;
+                    case DungeonType.MiniBoss:
+                        Debug.Log("Mini boss waiting");
+                        break;
+                    case DungeonType.BossKey:
+                        Debug.Log("Boss key located");
+                        break;
+                    case DungeonType.Palace:
+                        Debug.Log("Biome boss waiting");
+                        break;
+                }
             }
         }
     }

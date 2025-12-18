@@ -16,13 +16,13 @@ namespace ProjectCycle.Generator
         public bool[] Doors { get; set; } = new bool[4];
 
         // The distance of the cell from the starting cell in the dungeon.
-        public int DistanceFromStart { get; set; }
+        public int DistanceFromStart { get; set; } = 9999999;
 
         // The type of the cell:
         // 0 = Starting cell
         // 1 = Normal cell
         // 2 = Final cell
-        public int CellType { get; set; }
+        public CellType CellType { get; set; }
 
         // Constructor to initialize the cell with its position in the grid.
         public CellData(Vector2Int position)

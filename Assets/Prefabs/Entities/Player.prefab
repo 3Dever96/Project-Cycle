@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8490725543160748247}
   - component: {fileID: 8694443067735556267}
+  - component: {fileID: 5064269719570639358}
   - component: {fileID: 8168222390913518624}
   - component: {fileID: 8517282416518518862}
   - component: {fileID: 1433104557534481552}
@@ -61,6 +62,18 @@ CharacterController:
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &5064269719570639358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4903909420575005211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b9e48e49e736c41b5dab53cf67b568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: ProjectCycle.Interactable::ProjectCycle.Interactable.InteractManager
 --- !u!114 &8168222390913518624
 MonoBehaviour:
   m_ObjectHideFlags: 0
