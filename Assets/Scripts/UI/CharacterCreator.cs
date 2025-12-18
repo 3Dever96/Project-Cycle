@@ -105,6 +105,7 @@ namespace ProjectCycle.UI
 
         public void OnContinue()
         {
+            GameManager.instance.PlayerManager.SetStats();
             GameManager.instance.DungeonManager.BeginningDungeon(false);
             GameManager.instance.SceneHandler.MoveToScene(2);
         }
