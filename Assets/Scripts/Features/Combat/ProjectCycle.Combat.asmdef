@@ -1,0 +1,20 @@
+{
+    "name": "ProjectCycle.Combat",
+    "rootNamespace": "ProjectCycle.Combat",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:54dc2e0af0d6755498ba9e8ae8877d06",
+        "GUID:77a533b306f2068499a54d85883120c6",
+        "GUID:f388f9328b44a6f4bb087d66147da301",
+        "GUID:ee59ba998f580ec458d3d64dfde9827b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

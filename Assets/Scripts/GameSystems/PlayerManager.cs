@@ -46,5 +46,12 @@ namespace ProjectCycle.GameSystems
             cha = characterClass.baseCha;
             wit = characterClass.baseInt;
         }
+
+        public void TakeDamage(float attack)
+        {
+            float damage = (attack * 4f) - (def * 2f);
+
+            currentHp = Mathf.Clamp(currentHp - damage, 0f, maxHp);
+        }
     }
 }

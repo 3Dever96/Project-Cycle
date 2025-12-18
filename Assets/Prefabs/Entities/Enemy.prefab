@@ -128,6 +128,9 @@ GameObject:
   - component: {fileID: 8716813517045976597}
   - component: {fileID: 6511799259363398645}
   - component: {fileID: 9204143745354142004}
+  - component: {fileID: 1121649260262927644}
+  - component: {fileID: 8765367996276222564}
+  - component: {fileID: 3751113721128278221}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -215,6 +218,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ca60340e277314aa18c0ff349c64fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: ProjectCycle.EnemyControl::ProjectCycle.EnemyControl.EnemyChaseState
+--- !u!114 &1121649260262927644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3876857099368427272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ce6bbd2e7b7194498bd3abeb0ddb43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: ProjectCycle.EnemyControl::ProjectCycle.EnemyControl.EnemyAttackState
+  hurtBox: {fileID: 7088446770182146051}
+--- !u!114 &8765367996276222564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3876857099368427272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f51cc982de732944a2133fa1c7a7c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: ProjectCycle.Combat::ProjectCycle.Combat.EnemyStats
+  enemyClass: {fileID: 11400000, guid: a2c295e0ff7ca5f43a36d67fa8af6553, type: 2}
+  maxHp: 0
+  currentHp: 0
+  maxMp: 0
+  currentMp: 0
+  maxSp: 0
+  currentSp: 0
+  atk: 0
+  def: 0
+  mATk: 0
+  mDef: 0
+  agi: 0
+  crit: 0
+  wis: 0
+  cha: 0
+  wit: 0
+--- !u!114 &3751113721128278221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3876857099368427272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a174fa3cd37d3041bb44d2be58a4bc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: ProjectCycle.Combat::ProjectCycle.Combat.EnemyCombatController
+  myStats: {fileID: 0}
+  attackDistance: 1.5
 --- !u!1 &6782765527593193580
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6525352975590552351
 Transform:
   m_ObjectHideFlags: 0

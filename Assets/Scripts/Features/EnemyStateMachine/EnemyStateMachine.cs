@@ -23,6 +23,8 @@ namespace ProjectCycle.EnemyControl
         // Reference to the enemy's chase state.
         public EnemyChaseState ChaseState { get; private set; }
 
+        public EnemyAttackState AttackState { get; private set; }
+
         // The original position of the enemy, used for returning to the patrol area.
         public Vector3 OriginPoint { get; private set; }
 
@@ -47,6 +49,7 @@ namespace ProjectCycle.EnemyControl
             // Retrieve references to the patrol and chase state components.
             PatrolState = GetComponent<EnemyPatrolState>();
             ChaseState = GetComponent<EnemyChaseState>();
+            AttackState = GetComponent<EnemyAttackState>();
 
             // Store the initial position of the enemy as the origin point.
             OriginPoint = transform.position;
@@ -90,6 +93,12 @@ namespace ProjectCycle.EnemyControl
             {
                 CurrentState.StartState(this);
             }
+        }
+
+        public void StartAttack(float attack)
+        {
+            SetState(AttackState);
+            StartCoroutine(AttackState.InitiateAttack(this));
         }
     }
 }
