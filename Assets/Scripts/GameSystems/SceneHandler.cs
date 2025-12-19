@@ -54,11 +54,7 @@ namespace ProjectCycle.GameSystems
 
             fadeAlpha = 1f;
 
-            // Load the new scene asynchronously
-            if (SceneManager.GetActiveScene().buildIndex != scene)
-            {
-                yield return SceneManager.LoadSceneAsync(scene);
-            }
+            yield return SceneManager.LoadSceneAsync(scene);
 
             // Fade in
             while (fadeAlpha > 0f)

@@ -17,6 +17,9 @@ namespace ProjectCycle.Generator
         // Prefab for the enemy character to be instantiated in the cell.
         public GameObject enemy;
 
+        [SerializeField] GameObject warp;
+        [SerializeField] GameObject key;
+
         // Data structure containing information about the cell (e.g., position, type, doors).
         public CellData cell;
 
@@ -26,11 +29,6 @@ namespace ProjectCycle.Generator
         // Reference to the CinemachineTargetGroup for managing camera targets.
         private CinemachineTargetGroup targetGroup;
 
-        // GameObject representing the end flag, which is activated for the final cell.
-        public GameObject endFlag;
-
-        private DistanceSign distanceSign;
-
         // Method to create and initialize the cell.
         public void CreateCell()
         {
@@ -39,11 +37,6 @@ namespace ProjectCycle.Generator
 
             // Find the GameObject named "EntityParent" and get its Transform component.
             entityParent = GameObject.Find("EntityParent").transform;
-
-            // Deactivate the end flag initially.
-            endFlag.SetActive(false);
-
-            distanceSign = GetComponentInChildren<DistanceSign>();
         }
 
         // Method to initialize the cell based on its type and properties.
@@ -54,8 +47,6 @@ namespace ProjectCycle.Generator
             {
                 doorObjects[i].gameObject.SetActive(!cell.Doors[i]);
             }
-
-            distanceSign.distance = cell.DistanceFromStart;
 
             // Handle initialization based on the cell type.
             if (cell.CellType == CellType.Start) // Starting cell
@@ -75,25 +66,28 @@ namespace ProjectCycle.Generator
             }
             else if (cell.CellType == CellType.Final) // Final cell
             {
-                // Activate the end flag to indicate the final cell.
-                endFlag.SetActive(true);
-
                 switch (GameManager.instance.DungeonManager.dungeonType)
-                {
+                {   
                     case DungeonType.None:
-                        Debug.Log("No reward");
+                        Instantiate(warp, transform);
                         break;
                     case DungeonType.Treasure:
-                        Debug.Log("Big Chest");
+                        Instantiate(key, transform);
                         break;
                     case DungeonType.MiniBoss:
-                        Debug.Log("Mini boss waiting");
+                        // Instantiate an enemy at the cell's position and set its parent to the entity parent.
+                        Transform miniBoss = Instantiate(enemy, transform.position, Quaternion.identity).transform;
+                        miniBoss.parent = entityParent;
+                        GameManager.instance.DungeonManager.boss = miniBoss.gameObject;
                         break;
                     case DungeonType.BossKey:
-                        Debug.Log("Boss key located");
+                        Instantiate(key, transform);
                         break;
                     case DungeonType.Palace:
-                        Debug.Log("Biome boss waiting");
+                        // Instantiate an enemy at the cell's position and set its parent to the entity parent.
+                        Transform trueBoss = Instantiate(enemy, transform.position, Quaternion.identity).transform;
+                        trueBoss.parent = entityParent;
+                        GameManager.instance.DungeonManager.boss = trueBoss.gameObject;
                         break;
                 }
             }
