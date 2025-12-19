@@ -49,7 +49,7 @@ namespace ProjectCycle.GameSystems
 
         public void TakeDamage(float attack)
         {
-            float damage = (attack * 4f) - (def * 2f);
+            float damage = Mathf.Max(attack - def, 1f);
 
             currentHp = Mathf.Clamp(currentHp - damage, 0f, maxHp);
         }

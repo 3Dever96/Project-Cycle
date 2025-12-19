@@ -34,9 +34,9 @@ namespace ProjectCycle.EnemyControl
         {
             if (!hurtBox.activeInHierarchy)
             {
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.25f);
                 hurtBox.SetActive(true);
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(0.5f);
                 hurtBox.SetActive(false);
                 enemy.SetState(enemy.ChaseState);
             }
