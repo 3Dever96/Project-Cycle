@@ -1,3 +1,4 @@
+using ProjectCycle.GameSystems;
 using UnityEngine;
 
 namespace ProjectCycle.PlayerControl
@@ -21,6 +22,8 @@ namespace ProjectCycle.PlayerControl
         // Reference to the player's air state.
         public PlayerAirState AirState { get; private set; }
 
+        public PlayerAttackState AttackState { get; private set; }
+
         // Current horizontal movement speed of the player.
         public float CurrentSpeed { get; set; }
 
@@ -42,6 +45,7 @@ namespace ProjectCycle.PlayerControl
             // Retrieve references to the ground and air state components.
             GroundState = GetComponent<PlayerGroundState>();
             AirState = GetComponent<PlayerAirState>();
+            AttackState = GetComponent<PlayerAttackState>();
 
             // Set the initial state of the player to GroundState.
             SetState(GroundState);
@@ -49,10 +53,13 @@ namespace ProjectCycle.PlayerControl
 
         private void FixedUpdate()
         {
-            // If there is a current state, update it every fixed frame.
-            if (CurrentState != null)
+            if (GameManager.instance.gameState == GameState.Play)
             {
-                CurrentState.UpdateState(this);
+                // If there is a current state, update it every fixed frame.
+                if (CurrentState != null)
+                {
+                    CurrentState.UpdateState(this);
+                }
             }
         }
 

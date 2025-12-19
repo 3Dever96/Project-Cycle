@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using ProjectCycle.PlayerControl;
+using ProjectCycle.GameSystems;
 
 namespace ProjectCycle.EnemyControl
 {
@@ -22,6 +23,8 @@ namespace ProjectCycle.EnemyControl
 
         // Reference to the enemy's chase state.
         public EnemyChaseState ChaseState { get; private set; }
+
+        public EnemyAttackState AttackState { get; private set; }
 
         // The original position of the enemy, used for returning to the patrol area.
         public Vector3 OriginPoint { get; private set; }
@@ -47,6 +50,7 @@ namespace ProjectCycle.EnemyControl
             // Retrieve references to the patrol and chase state components.
             PatrolState = GetComponent<EnemyPatrolState>();
             ChaseState = GetComponent<EnemyChaseState>();
+            AttackState = GetComponent<EnemyAttackState>();
 
             // Store the initial position of the enemy as the origin point.
             OriginPoint = transform.position;
@@ -58,17 +62,20 @@ namespace ProjectCycle.EnemyControl
         // Called every fixed frame to update the enemy's state logic.
         private void FixedUpdate()
         {
-            // If the player reference is null, attempt to find the PlayerStateMachine in the scene.
-            if (Player == null)
+            if (GameManager.instance.gameState == GameState.Play)
             {
-                Player = FindFirstObjectByType<PlayerStateMachine>();
-            }
-            else
-            {
-                // If there is a current state, update it every fixed frame.
-                if (CurrentState != null)
+                // If the player reference is null, attempt to find the PlayerStateMachine in the scene.
+                if (Player == null)
                 {
-                    CurrentState.UpdateState(this);
+                    Player = FindFirstObjectByType<PlayerStateMachine>();
+                }
+                else
+                {
+                    // If there is a current state, update it every fixed frame.
+                    if (CurrentState != null)
+                    {
+                        CurrentState.UpdateState(this);
+                    }
                 }
             }
         }
@@ -90,6 +97,12 @@ namespace ProjectCycle.EnemyControl
             {
                 CurrentState.StartState(this);
             }
+        }
+
+        public void StartAttack(float attack)
+        {
+            SetState(AttackState);
+            StartCoroutine(AttackState.InitiateAttack(this));
         }
     }
 }

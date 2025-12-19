@@ -13,6 +13,9 @@ namespace ProjectCycle.GameSystems
 
 		public static GameManager instance;
 		public GameState gameState;
+
+		public delegate void OnGameOver();
+		public OnGameOver gameOver;
 				
 		private void Awake()
 		{
@@ -34,6 +37,15 @@ namespace ProjectCycle.GameSystems
 			PlayerManager = GetComponent<PlayerManager>();
 			SceneHandler = GetComponent<SceneHandler>();
 			DungeonManager = GetComponent<DungeonManager>();
+		}
+
+		public void SetGameOver()
+		{
+			if (gameOver != null)
+			{
+				gameState = GameState.GameOver;
+				gameOver.Invoke();
+			}
 		}
 	}
 }
