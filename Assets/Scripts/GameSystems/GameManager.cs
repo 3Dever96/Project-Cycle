@@ -14,6 +14,9 @@ namespace ProjectCycle.GameSystems
 		public static GameManager instance;
 		public GameState gameState;
 
+		public delegate void OnVictory();
+		public OnVictory onVictory;
+
 		public delegate void OnGameOver();
 		public OnGameOver gameOver;
 				
@@ -45,6 +48,15 @@ namespace ProjectCycle.GameSystems
 			{
 				gameState = GameState.GameOver;
 				gameOver.Invoke();
+			}
+		}
+
+		public void SetVictory()
+		{
+			if (onVictory != null)
+			{
+				gameState = GameState.Victory;
+				onVictory.Invoke();
 			}
 		}
 
