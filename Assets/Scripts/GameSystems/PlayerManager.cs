@@ -52,6 +52,11 @@ namespace ProjectCycle.GameSystems
             float damage = Mathf.Max(attack - def, 1f);
 
             currentHp = Mathf.Clamp(currentHp - damage, 0f, maxHp);
+
+            if (currentHp <= 0f)
+            {
+                GameManager.instance.SetGameOver();
+            }
         }
     }
 }

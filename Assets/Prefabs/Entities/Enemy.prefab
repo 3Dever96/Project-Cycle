@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 1121649260262927644}
   - component: {fileID: 8765367996276222564}
   - component: {fileID: 3751113721128278221}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 8871562041062680860}
   - component: {fileID: 1400428686975229697}
   - component: {fileID: 2273289075493628730}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hurt Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}

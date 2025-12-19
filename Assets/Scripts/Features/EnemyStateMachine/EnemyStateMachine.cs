@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using ProjectCycle.PlayerControl;
+using ProjectCycle.GameSystems;
 
 namespace ProjectCycle.EnemyControl
 {
@@ -61,17 +62,20 @@ namespace ProjectCycle.EnemyControl
         // Called every fixed frame to update the enemy's state logic.
         private void FixedUpdate()
         {
-            // If the player reference is null, attempt to find the PlayerStateMachine in the scene.
-            if (Player == null)
+            if (GameManager.instance.gameState == GameState.Play)
             {
-                Player = FindFirstObjectByType<PlayerStateMachine>();
-            }
-            else
-            {
-                // If there is a current state, update it every fixed frame.
-                if (CurrentState != null)
+                // If the player reference is null, attempt to find the PlayerStateMachine in the scene.
+                if (Player == null)
                 {
-                    CurrentState.UpdateState(this);
+                    Player = FindFirstObjectByType<PlayerStateMachine>();
+                }
+                else
+                {
+                    // If there is a current state, update it every fixed frame.
+                    if (CurrentState != null)
+                    {
+                        CurrentState.UpdateState(this);
+                    }
                 }
             }
         }
