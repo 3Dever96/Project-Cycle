@@ -42,14 +42,11 @@ namespace ProjectCycle.Combat
 
         private void OnTriggerEnter(Collider other)
         {
-            if (enemy.CurrentState.GetType() == typeof(EnemyAttackState))
-            {
-                PlayerStateMachine newPlayer = other.GetComponent<PlayerStateMachine>();
+            PlayerStateMachine newPlayer = other.GetComponent<PlayerStateMachine>();
 
-                if (newPlayer == player)
-                {
-                    GameManager.instance.PlayerManager.TakeDamage(myStats.atk);
-                }
+            if (newPlayer == player)
+            {
+                GameManager.instance.PlayerManager.TakeDamage(myStats.atk);
             }
         }
     }
