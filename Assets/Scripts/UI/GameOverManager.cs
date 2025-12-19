@@ -39,9 +39,7 @@ namespace ProjectCycle.UI
 
         public void OnContinue()
         {
-            GameManager.instance.SceneHandler.MoveToScene(1);
-            GameManager.instance.DungeonManager.completedDungeons = 0;
-            GameManager.instance.gameState = GameState.Play;
+            GameManager.instance.ResetGame();
         }
 
         IEnumerator FadeInScreen()

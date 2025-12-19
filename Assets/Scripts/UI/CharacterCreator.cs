@@ -46,23 +46,26 @@ namespace ProjectCycle.UI
             brightness.value = Random.value;
 
             UpdatePlayerManager();
+
+            GameManager.instance.gameState = GameState.Play;
+            GameManager.instance.DungeonManager.completedDungeons = 0;
         }
 
         private void Update()
         {
             className.text = classes[index].role.className;
-            hpValue.text = classes[index].role.baseHp.ToString();
-            mpValue.text = classes[index].role.baseMp.ToString();
-            spValue.text = classes[index].role.baseSp.ToString();
-            atkValue.text = classes[index].role.baseAtk.ToString();
-            defValue.text = classes[index].role.baseDef.ToString();
-            mAtkValue.text = classes[index].role.baseMAtk.ToString();
-            mDefValue.text = classes[index].role.baseMDef.ToString();
-            agiValue.text = classes[index].role.baseAgi.ToString();
-            critValue.text = classes[index].role.baseCrit.ToString();
-            wisValue.text = classes[index].role.baseWis.ToString();
-            chaValue.text = classes[index].role.baseCha.ToString();
-            intValue.text = classes[index].role.baseInt.ToString();
+            hpValue.text = "HP: " + classes[index].role.baseHp.ToString();
+            mpValue.text = "MP: " + classes[index].role.baseMp.ToString();
+            spValue.text = "SP: " + classes[index].role.baseSp.ToString();
+            atkValue.text = "ATK: " + classes[index].role.baseAtk.ToString();
+            defValue.text = "DEF: " + classes[index].role.baseDef.ToString();
+            mAtkValue.text = "M.ATK: " + classes[index].role.baseMAtk.ToString();
+            mDefValue.text = "M.DEF: " + classes[index].role.baseMDef.ToString();
+            agiValue.text = "AGI: " + classes[index].role.baseAgi.ToString();
+            critValue.text = "CRIT: " + classes[index].role.baseCrit.ToString();
+            wisValue.text = "WIS: " + classes[index].role.baseWis.ToString();
+            chaValue.text = "CHA: " + classes[index].role.baseCha.ToString();
+            intValue.text = "INT: " + classes[index].role.baseInt.ToString();
         }
 
         private void PopulateArmors()

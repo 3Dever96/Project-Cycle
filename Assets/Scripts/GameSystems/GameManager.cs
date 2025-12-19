@@ -47,5 +47,10 @@ namespace ProjectCycle.GameSystems
 				gameOver.Invoke();
 			}
 		}
+
+		public void ResetGame()
+		{
+			SceneHandler.MoveToScene(1);
+        }
 	}
 }
